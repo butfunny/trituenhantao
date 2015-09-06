@@ -1,2 +1,2 @@
-# trituenhantao
+# Trí tuệ nhân tạo
 
