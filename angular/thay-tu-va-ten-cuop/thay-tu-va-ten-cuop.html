@@ -1,0 +1,67 @@
+
+<div class="row text-center" ng-show="!thinkDone">
+    <button class="btn btn-primary" ng-click="start()" ng-disabled="startThink"> {{!startThink ?  'Bắt đầu' : 'Đang nghĩ...' }} <loading-mini ng-if="startThink"></loading-mini></button>
+    <h4>
+        Bài toán thầy tu và ác quỷ: Có ba nhà triệu phú và ba tên cướp ở cùng bên bờ một con sông,
+        cùng một chiếc thuyền chở được một hoặc hai người.
+        Hãy tìm cách đưa mọi người qua sông sao cho không để lại ở bên bờ sông kẻ cướp nhiều hơn triệu phú.
+
+    </h4>
+
+
+</div>
+<div ng-show="thinkDone">
+    <div class="row text-center">
+        <h4 ng-show="toanTu != null && !done">Ta chuyển {{toanTu == 'TT' ? '2 sư' :
+                        toanTu == 'CC' ? '2 cướp':
+                        toanTu == 'TC' ? '1 cướp 1 sư':
+                        toanTu == 'T'  ? '1 sư' : '1 cướp'}}
+            <img ng-src="img/{{toanTu}}.png" alt="" ng-if="toanTu != null"/>
+        </h4>
+
+        <h4 ng-show="done">Xong</h4>
+        <button class="btn btn-primary" ng-show="toanTu != null && !done && !automatic " ng-click="next()">Tiếp <i class="fa fa-arrow-right"></i></button>
+        <button class="btn btn-primary" ng-show = "toanTu == null && !done" ng-click="run()">Xem từng bước</button>
+        <button class="btn btn-default" ng-show = "toanTu == null && !done" ng-click="auto()">Tự động </button>
+        <button class="btn btn-warning" ng-show = "done" ng-click="restart()">Xem lại</button>
+    </div>
+
+
+    <div class="row text-center">
+        <div class="col-md-5">
+            <img src="img/su.png" ng-repeat="i in getNumber(node[0]) track by $index" ng-if="!node[2]" alt=""/>
+            <img src="img/su.png" ng-repeat="i in getNumber(3 - node[0]) track by $index" ng-if="node[2]" alt=""/>
+
+
+            <img src="img/cuop.png" ng-repeat="i in getNumber(node[1]) track by $index" ng-if="!node[2]" alt=""/>
+            <img src="img/cuop.png" ng-repeat="i in getNumber(3 - node[1]) track by $index" ng-if="node[2]" alt=""/>
+
+
+        </div>
+
+        <div class="col-md-5">
+            <img src="img/su.png" ng-repeat="i in getNumber(node[0]) track by $index" ng-if="node[2]" alt=""/>
+            <img src="img/su.png" ng-repeat="i in getNumber(3 - node[0]) track by $index" ng-if="!node[2]" alt=""/>
+
+
+            <img src="img/cuop.png" ng-repeat="i in getNumber(node[1]) track by $index" ng-if="node[2]" alt=""/>
+            <img src="img/cuop.png" ng-repeat="i in getNumber(3 - node[1]) track by $index" ng-if="!node[2]" alt=""/>
+        </div>
+
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-5">
+            <img src="img/botrai.png" alt=""/>
+        </div>
+
+        <div class="col-md-5">
+
+            <img src="img/bophai.png" alt=""/>
+
+        </div>
+
+    </div>
+
+</div>
+
