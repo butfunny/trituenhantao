@@ -10,7 +10,8 @@
 
 
 
-        'ttnt.thay-tu-va-ten-cuop'
+        'ttnt.thay-tu-va-ten-cuop',
+        'ttnt.tam-canh'
     ])
     ;
 

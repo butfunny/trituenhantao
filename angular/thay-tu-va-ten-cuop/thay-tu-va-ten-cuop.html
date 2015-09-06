@@ -16,10 +16,11 @@
                         toanTu == 'CC' ? '2 cướp':
                         toanTu == 'TC' ? '1 cướp 1 sư':
                         toanTu == 'T'  ? '1 sư' : '1 cướp'}}
-            <img ng-src="img/{{toanTu}}.png" alt="" ng-if="toanTu != null"/>
+            <img ng-src="img/{{toanTu}}.png" alt="" ng-if="toanTu != null"/>{{node[2] ? 'qua' : 'về' }}
         </h4>
 
         <h4 ng-show="done">Xong</h4>
+        <button class="btn btn-default" ng-show="toanTu != null && !done && !automatic " ng-click="prev()" ng-show="toanTu != null && !done && !automatic "> <i class="fa fa-arrow-left"></i> Back</button>
         <button class="btn btn-primary" ng-show="toanTu != null && !done && !automatic " ng-click="next()">Tiếp <i class="fa fa-arrow-right"></i></button>
         <button class="btn btn-primary" ng-show = "toanTu == null && !done" ng-click="run()">Xem từng bước</button>
         <button class="btn btn-default" ng-show = "toanTu == null && !done" ng-click="auto()">Tự động </button>

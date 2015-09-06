@@ -41,6 +41,8 @@
             var index = 1;
 
 
+
+
             $scope.next = function (){
                 $scope.toanTu = $scope.way[index].arc;
                 $scope.node = $scope.way[index].point;
@@ -98,6 +100,20 @@
                 } , 1500 )
 
 
+
+            };
+
+
+            $scope.prev = function () {
+                index = index - 2;
+                $scope.toanTu = $scope.way[index].arc;
+                $scope.node = $scope.way[index].point;
+
+                if(checkEqualOfArray($scope.node, end)){
+                    $scope.done = true;
+                }
+
+                index++;
 
             };
 
