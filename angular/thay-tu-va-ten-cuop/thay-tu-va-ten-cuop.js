@@ -86,14 +86,7 @@
                     }
 
                     $scope.$apply(function () {
-                        $scope.toanTu = $scope.way[index].arc;
-                        $scope.node = $scope.way[index].point;
-
-                        if(checkEqualOfArray($scope.node, end)){
-                            $scope.done = true;
-                        }
-
-                        index++;
+                        $scope.next();
                     });
 
 
